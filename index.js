@@ -11,6 +11,3 @@ const name = "Ezeliora Godsfavour";
 let age;
 var occupation = "web tutor";
 console.log(name, age, occupation);
-
-// 
-// To convert a string into an integer, you can use the int() function:

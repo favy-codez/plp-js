@@ -44,3 +44,25 @@ Here, JavaScript coerces the boolean true into the number 1 and adds it to 123.
 let result = "123" == 123; // result is true (boolean)
 ```
 Here, JavaScript coerces both values to the same type before comparing them. In this case, "123" is coerced to 123.
+- There are several ways to convert a string into an integer. Here are the most common methods:
+1. **parseInt()-** The parseInt function parses a string and returns an integer. It can also handle different bases (radixes) for conversion.
+```
+let str = "123";
+let num = parseInt(str, 10); // num is 123
+```
+You should always specify the radix (10 for decimal) to avoid unintended behavior.
+2. **Unary Plus (+)-** Using the unary plus operator is a shorthand way to convert a string to a number.
+```
+let str = "123";
+let num = +str; // num is 123
+```
+3. **Math.floor(), Math.ceil(), Math.round()-** If the string contains a floating-point number and you want to convert it to an integer, you can use Math.floor(), Math.ceil(), or Math.round() after converting to a number.
+```
+let str = "123.45";
+let num = Math.floor(Number(str)); // num is 123
+```
+4. **~~ (Double Bitwise NOT)-** The double bitwise NOT operator is another shorthand for converting a string to an integer. This method is less common and can be confusing, but it works for integers.
+```
+let str = "123";
+let num = ~~str; // num is 123
+```
