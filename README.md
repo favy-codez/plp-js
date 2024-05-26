@@ -55,6 +55,103 @@ Since day is 3, it matches the case 3.
 Therefore, the variable dayName is assigned the value 'Wednesday'.
 The break statement exits the switch statement, preventing the execution of subsequent cases.
 Finally, 'Wednesday' is logged to the console.
+- Combining multiple if conditions using the logical operator AND (&&) or OR(||):
+```
+let myFood = "Banana";
+if (myFood === "Banana" || myFood === "Apple") {
+console.log("Eat fruits everyday to keep you healthy.");
+}
+if (myFood === "Chocolate Cake") {
+console.log("Enjoy the sweet treat.");
+}
+```
+Using switch case
+```
+let myFood = "Banana";
+switch (myFood) {
+case "Banana":
+case "Apple":
+console.log("Eat fruits everyday to keep you healthy.");
+break;
+case "Chocolate Cake":
+console.log("Enjoy the sweet treat.");
+break;
+}
+```
+**NOTE** - The switch statement in JavaScript isn't suitable for replacing complex logical conditions that involve logical operators like && (AND) or || (OR). Each case in a switch statement is a strict equality comparison (===) with the expression provided in the switch statement.
+- A Loop statement is another category of control flow statement used to execute a block of code multiple times until a certain condition is met. There are two loop statements used in JavaScript:
+- The for statement -
+```
+for (let x = 0; x < 10; x++) {
+console.log(x);
+}
+```
+The for statement is followed by parentheses (()) which contain 3 expressions:
+ initialization, condition , The arithmetic expression, where the variable value is either incremented or decremented by the end of each loop. These expressions are separated by a semicolon (;). The for loop is useful when you know how many times you need to execute a repetitive task.
+For example, let's say you're writing a program to flip a coin. You need to find how many times the coin lands on heads when tossed 10 times. You can do it by using the Math.random method:
+```
+let heads = 0;
+let tails = 0;
+for (x = 1; x <= 10; x++) {
+if (Math.random() < 0.5) {
+tails++;
+} else {
+heads++;
+}
+}
+console.log("Tossed the coin ten times");
+console.log(`Number of heads: ${heads}`);
+console.log(`Number of tails: ${tails}`);
+```
+This code simulates flipping a coin 10 times and counting the number of heads and tails that occur. Here's a breakdown of how it works:
+
+Initialization:
+Two variables heads and tails are initialized to 0. These variables will be used to count the number of heads and tails, respectively.
+Loop:
+The loop runs 10 times (for (x = 1; x <= 10; x++)). On each iteration, it simulates flipping a coin by generating a random number between 0 and 1 using Math.random().
+If the randomly generated number is less than 0.5, it's considered a tail, so the tails count is incremented (tails++).
+Otherwise, it's considered a head, so the heads count is incremented (heads++).
+Output:
+After the loop, it prints a message indicating that the coin was tossed ten times (console.log("Tossed the coin ten times")).
+It then prints the number of heads and tails that were counted during the simulation using template literals:
+console.log(Number of heads: ${heads});
+console.log(Number of tails: ${tails});
+Example Output:
+The output will vary each time the code runs due to the random nature of the coin flips. 
+
+- The while statement - A while loop in JavaScript is used to repeatedly execute a block of code as long as a specified condition is true. 
+```
+while (condition) {
+  // Code block to be executed as long as the condition is true
+}
+```
+How it works:
+The condition is evaluated before each iteration of the loop. If it's true, the code block inside the loop is executed. If it's false, the loop terminates and program control moves to the next statement after the loop.
+Inside the loop, the code block is executed, and then the condition is evaluated again. This process continues until the condition becomes false.
+Example:
+Let's say we want to count from 1 to 5 using a while loop:
+```
+let count = 1;
+
+while (count <= 5) {
+  console.log(count);
+  count++;
+}
+```
+This loop will print numbers from 1 to 5 because:
+Initially, count is 1.
+The condition count <= 5 is true, so the loop executes.
+Inside the loop, count is printed, and then incremented by 1.
+This process repeats until count becomes 6, at which point the condition becomes false, and the loop terminates.
+**Infinite loops** - Be careful when using while loops to avoid creating infinite loops, where the condition is always true, causing the loop to run indefinitely. 
+For example:
+```
+// Infinite loop
+while (true) {
+  // Code block that will run indefinitely
+}
+```
+To avoid infinite loops, ensure that the condition inside the while loop eventually becomes false or include a mechanism to break out of the loop using the break statement when a certain condition is met.
 
 - The logical operators are used to check whether one or more expressions result in either True or False.
 - There are three logical operators that JavaScript has:
