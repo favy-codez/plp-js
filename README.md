@@ -143,6 +143,25 @@ Initially, count is 1.
 The condition count <= 5 is true, so the loop executes.
 Inside the loop, count is printed, and then incremented by 1.
 This process repeats until count becomes 6, at which point the condition becomes false, and the loop terminates.
+```
+let flips = 0;
+let isHeads = false; // tracks whether the coin has landed on heads.
+while (!isHeads) {
+  // The loop while (!isHeads) will run as long as isHeads is false.
+  // Initially, isHeads is false, so the loop will start.
+  flips++;
+  // increments the flips counter by 1 each time the loop iterates, representing a coin flip.
+  isHeads = Math.random() < 0.5;
+//   Math.random() < 0.5; simulates a coin flip. Math.random() generates a random number between 0 (inclusive)
+// and 1 (exclusive). If this number is less than 0.5, isHeads is set to true (representing heads); otherwise,
+//  it remains false (representing tails).
+}
+
+// The loop will continue to run, incrementing the flips counter and flipping the coin until 
+// Math.random() < 0.5 evaluates to true, meaning the coin landed on heads. At that point, isHeads 
+// becomes true and the loop terminates.
+console.log(`It took ${flips} flips to land on heads.`); // It took 1 flips to land on heads.
+```
 **Infinite loops** - Be careful when using while loops to avoid creating infinite loops, where the condition is always true, causing the loop to run indefinitely. 
 For example:
 ```
@@ -152,6 +171,89 @@ while (true) {
 }
 ```
 To avoid infinite loops, ensure that the condition inside the while loop eventually becomes false or include a mechanism to break out of the loop using the break statement when a certain condition is met.
+
+- A function and a method are essentially the same, except that a method is called from an object.
+- Parameters are variables used to accept inputs given when the function is called.
+- Default parameters - When defining a function, you can set a default value for any parameter in that function.
+Example
+```
+function greet(name = "Nathan") {
+console.log(`Hello, ${name}!`);
+}
+
+greet(); // Hello, Nathan!
+```
+- Any function you define can have a mix of default and non-default parameters.
+```
+function greet(weather, name = "Nathan") {
+console.log(`Hello, ${name}!`);
+console.log(`It's ${weather} today, right?`);
+}
+greet("sunny"); // Hello, Nathan
+It's sunny today, right?
+```
+- **The rest parameter** - The rest parameter in JavaScript allows a function to accept an indefinite number of arguments as an array. This is useful when you don't know how many arguments will be passed to the function. The rest parameter syntax is introduced with the ... followed by a parameter name.
+```
+function functionName(...restParameter) {
+  // function body
+}
+```
+```
+function showDetails(name, age, ...hobbies) {
+  console.log(`Name: ${name}`);
+  console.log(`Age: ${age}`);
+  console.log(`Hobbies: ${hobbies.join(', ')}`);
+}
+
+showDetails('Alice', 30, 'reading', 'hiking', 'cooking');
+// Output:
+// Name: Alice
+// Age: 30
+// Hobbies: reading, hiking, cooking
+```
+-  A function can only have one rest parameter, and the rest parameter must be the last parameter in the function
+- **How to access object values-**
+using dot notation
+```
+const person = {
+  name: 'Alice',
+  age: 30
+};
+
+// Adding a new property
+person.job = 'Engineer';
+
+console.log(person);
+// Output: { name: 'Alice', age: 30, job: 'Engineer' }
+```
+Using bracket notation
+```
+const person = {
+  name: 'Alice',
+  age: 30
+};
+
+// Adding a new property
+person['job'] = 'Engineer';
+
+console.log(person);
+// Output: { name: 'Alice', age: 30, job: 'Engineer' }
+```
+- Deleting Properties from an Object - You can delete properties from an object using the delete operator.
+Example
+```
+const person = {
+  name: 'Alice',
+  age: 30,
+  job: 'Engineer'
+};
+
+// Deleting a property
+delete person.job;
+
+console.log(person);
+// Output: { name: 'Alice', age: 30 }
+```
 
 - The logical operators are used to check whether one or more expressions result in either True or False.
 - There are three logical operators that JavaScript has:
